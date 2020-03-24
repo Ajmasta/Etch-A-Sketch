@@ -23,7 +23,7 @@ body{
 
 .grid > div{
     padding: var(--size);
-    border: 1px black dotted  ;
+    border: 1px black solid  ;
     box-sizing: border-box;
     background-color: blue;
  

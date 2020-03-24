@@ -10,6 +10,7 @@ function fillGrid(row){
         div.value = 0
         div.className = "coloredGrid"
         div.addEventListener("mouseover", e =>{
+            
             e.target.value++
 
             let red = Math.floor(Math.random()*256)
@@ -37,6 +38,7 @@ document.getElementById("gridSize").addEventListener("click", ()=>{
         
         let sizeOfGrid = prompt("Enter the number of cases you want (<150)")
         if (sizeOfGrid >= 200) alert("Careful! We do not support more than 150 cases. But you can try...")
+        
         fillGrid(sizeOfGrid)
         root.style.setProperty("--size",`${(((800/sizeOfGrid)-2)/2)}px`)    
 
