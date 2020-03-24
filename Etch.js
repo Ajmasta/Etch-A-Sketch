@@ -4,25 +4,26 @@ let reset = document.querySelector(".button")
 
 function fillGrid(row){
     grid.innerHTML=""
-for(i=1; i<=row;i++){
-    for(y=1; y<=row; y++){
-    let div = document.createElement("div")
-    div.value = 0
-    div.className = "coloredGrid"
-    div.addEventListener("mouseover", e =>{
-        e.target.value++
+    for(i=1; i<=row;i++){
+        for(y=1; y<=row; y++){
+        let div = document.createElement("div")
+        div.value = 0
+        div.className = "coloredGrid"
+        div.addEventListener("mouseover", e =>{
+            e.target.value++
 
-        let red = Math.floor(Math.random()*256)
-        let green = Math.floor(Math.random()*256)
-        let blue= Math.floor(Math.random()*256)
+            let red = Math.floor(Math.random()*256)
+            let green = Math.floor(Math.random()*256)
+            let blue= Math.floor(Math.random()*256)
 
 
-         e.target.style.backgroundColor = `rgba(${red},${green},${blue},${1-e.target.value /10})`
-        })
+            e.target.style.backgroundColor = `rgba(${red},${green},${blue},${1-e.target.value /10})`
+            })
 
-         grid.appendChild(div)
+            grid.appendChild(div)
+        }
     }
-}}
+}
 
 reset.addEventListener("click", ()=>{
 
@@ -41,3 +42,4 @@ document.getElementById("gridSize").addEventListener("click", ()=>{
 
 })
 
+fillGrid(32)
