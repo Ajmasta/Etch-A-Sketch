@@ -35,8 +35,8 @@ document.querySelectorAll(".coloredGrid").forEach(div=> {
 
 document.getElementById("gridSize").addEventListener("click", ()=>{
         
-        let sizeOfGrid = prompt("Enter the number of cases you want (<200)")
-        if (sizeOfGrid >= 200) alert("Careful! We do not support more than 200 cases. But you can try...")
+        let sizeOfGrid = prompt("Enter the number of cases you want (<150)")
+        if (sizeOfGrid >= 200) alert("Careful! We do not support more than 150 cases. But you can try...")
         fillGrid(sizeOfGrid)
         root.style.setProperty("--size",`${(((800/sizeOfGrid)-2)/2)}px`)    
 
