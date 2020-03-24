@@ -1,0 +1,30 @@
+
+:root{
+    --size : 11.5px
+}
+body{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow-x:hidden;
+   
+}
+.grid{
+    margin:auto;
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    flex-wrap: wrap;
+    background-color: black;
+}
+
+.grid > div{
+    padding: var(--size);
+    border: 1px black dotted  ;
+    box-sizing: border-box;
+    background-color: blue;
+ 
+}
