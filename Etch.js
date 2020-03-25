@@ -10,7 +10,7 @@ let colorInput = false;
 let colorChoice = [];
 
 const palettes = document.querySelector(".palettes")
-
+const removeBorders = document.getElementById("removeBorders")
 
 
 
@@ -87,10 +87,16 @@ function fillGrid(row){
         let div = document.createElement("div")
         div.value = 0
         div.className = "coloredGrid"
-        div.addEventListener("mouseover", colorHandler)
-            grid.appendChild(div)
+
+        if(row>=150) {
+            div.className = "bigGrid"
         }
-        
+
+        div.addEventListener("mouseover", colorHandler)
+
+        grid.appendChild(div)
+        }
+    
     }
 }
 
@@ -106,11 +112,13 @@ reset.addEventListener("click", ()=>{
 
 document.getElementById("gridSize").addEventListener("click", ()=>{
         
-        let sizeOfGrid = prompt("Enter the grid size you want (<150)")
-        if (sizeOfGrid >= 200) alert("Careful! We do not support more than 150 cases. But you can try...")
-        
+        let sizeOfGrid = prompt("Enter the grid size you want (We recommend <= 300)");
+        root.style.setProperty("--bigSize",`${(((800/sizeOfGrid))/2)}px`);
+
         fillGrid(sizeOfGrid)
-        root.style.setProperty("--size",`${(((800/sizeOfGrid)-2)/2)}px`)    
+        root.style.setProperty("--size",`${(((800/sizeOfGrid)-2)/2)}px`) 
+        
+        if(sizeOfGrid >= 150)alert("We automatically remove borders if the grid >=150")
 
 })
 
@@ -168,4 +176,16 @@ randomizeColor.addEventListener("click",()=>{
     }
 )
 
+
+
+removeBorders.addEventListener("click",()=>{
+    if(document.querySelector(".coloredGrid")){
+    const coloredGrid = document.querySelectorAll(".coloredGrid")
+    coloredGrid.forEach(div=> div.className="bigGrid")
+    }else{
+        const bigGrid = document.querySelectorAll(".bigGrid")
+        bigGrid.forEach(div=> div.className = "coloredGrid")
+    }
+     
+})
 fillGrid(32)

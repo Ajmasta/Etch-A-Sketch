@@ -1,6 +1,7 @@
 
 :root{
     --size : 11.5px;
+    --bigSize: 12.5px;
     --color: #0D47A1;
 }
 @media screen and (min-width: 1397px){
@@ -38,12 +39,16 @@ body{
     background-color: white;
 }
 
-.grid > div{
+.coloredGrid{
     padding: var(--size);
     border: 1px black solid  ;
     box-sizing: border-box;
     background-color: var(--color);
- 
+}
+
+.bigGrid{
+    padding: var(--bigSize);
+    background-color: var(--color);
 }
 
 
