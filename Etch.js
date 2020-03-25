@@ -106,6 +106,12 @@ reset.addEventListener("click", ()=>{
         div.style.backgroundColor = "var(--color)"
         div.value=0
             }
+
+        )
+    document.querySelectorAll(".bigGrid").forEach(div=> {
+        div.style.backgroundColor = "var(--color)"
+        div.value=0
+            }
         )
     }
 )
