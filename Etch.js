@@ -128,10 +128,14 @@ colorButton.addEventListener("input", e=>{
         })
     }
 
+   
+    
+
     if (document.querySelector(".special")) document.querySelector(".special").innerHTML = ""
 
     colorInput = true;
     colorChoice.push(e.target.value);
+    if (colorChoice.length>5) colorChoice = colorChoice.slice(1)
     activeColorArray = colorChoice
     fillCustomPalette(colorChoice)
     } 
