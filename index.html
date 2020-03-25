@@ -8,15 +8,35 @@
         <link rel="stylesheet" href="Etch.css">
     </head>
     <body>
-        <div class= button>
-            <button>Reset</button>
-            <button id= "gridSize"> Change Grid Size</button>
+        <div class = "content">
+            <div class="top-page">
+                <div class= "button">
+                    <button>Reset</button>
+                    <button id= "gridSize"> Change Grid Size</button>
+                </div>
+                
+                <label for="color">Change Background Color </label>
+                <input id="backgroundColorButton" type="color" name="base" value="blue">
+
+            </div>
+                <div  class = "color-choice">
+            
+                    <h2>Choose a Color Palette</h3> 
+                        <div class = "palettes">
+                           
+                        </div>
+                        <h3>or</h3>
+                    <label for="color">Create your own Color Palette </label>
+                    <input id="colorButton" type="color" name="base" value="#0D47A1">
+                    <button id="resetCustomPalette">Reset Custom Palette</button></br>
+                   <button id= "randomizeColor"> Randomize Color</button>
+                    
+                   
+
+                </div>
+                <div class = grid>
+                </div>
         </div>
-        <div  class = "color-choice">
-            <label for="color">Choose a Color</label>
-            <input id="color" type="color" name="base" value="#ffc600">
-        </div>
-      <div class = grid></div>
        
         <script src="Etch.js" async defer></script>
     </body>

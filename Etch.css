@@ -1,6 +1,7 @@
 
 :root{
-    --size : 11.5px
+    --size : 11.5px;
+    --color: #0D47A1;
 }
 body{
     display:flex;
@@ -9,7 +10,8 @@ body{
     align-items: center;
     width: 100vw;
     height: 100vh;
-    overflow-x:hidden;
+    background-color: #FFFAFA	;
+
    
 }
 .grid{
@@ -18,17 +20,110 @@ body{
     flex-direction: row;
     width: 800px;
     flex-wrap: wrap;
-    background-color: black;
+    background-color: white;
 }
 
 .grid > div{
     padding: var(--size);
     border: 1px black solid  ;
     box-sizing: border-box;
-    background-color: blue;
+    background-color: var(--color);
  
 }
-color-choice{
+.content{
+    margin-top:1rem;
     display:flex;
     flex-direction: row;
+    flex-wrap:wrap;
+}
+
+.color-choice{
+    margin-right: 5rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    height: 15px;
+    
+}
+
+input{
+    margin: 15px 0 20px 0px
+}
+
+.palettes{
+    
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+.palette{
+    width : 15px;
+    height: 15px;
+    
+}
+.customPalette,
+.paletteContainer
+{
+    width : 16px;
+    height: 75px;
+    margin-right: 2rem;
+    box-sizing: border-box;
+}
+.customPalette:hover,
+.paletteContainer:hover{
+ 
+    border: 1px solid grey;
+    box-shadow: 1px 1px 1px black;
+    
+}
+
+.backgroundColor{
+    display:flex;
+    flex-direction: column;
+}
+
+.button{
+    float:left;
+    
+}
+
+button{
+    font-family: arial 'Times New Roman', Times, serif;
+    padding: 5px;
+    border: none;
+    box-shadow:1px 1px 1px grey;
+    background-color: white;;
+    margin-right: 15px;
+}
+
+button:hover{
+    background: lightgrey;
+}
+.color-choice > label{
+    font-weight: 900;
+}
+
+.top-page{
+    width : 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   position:absolute;
+   top: 1rem;
+
+}
+.top-page > input{
+    margin-left: 10px;
+}
+
+.active{
+    border: 1px black solid;
+    box-shadow: 3px 3px 3px black;
+
 }
