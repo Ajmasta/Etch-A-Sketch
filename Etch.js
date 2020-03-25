@@ -68,14 +68,15 @@ function randomElement(array){
 
 
 function colorHandler(e){
-    e.target.value++
-
+    
     let red = Math.floor(Math.random()*256)
     let green = Math.floor(Math.random()*256)
     let blue= Math.floor(Math.random()*256)
-
-    e.target.style.backgroundColor = `rgba(${red},${green},${blue},${1-e.target.value /10})`
-    if(colorInput) e.target.style.backgroundColor = `${randomElement(activeColorArray)}`
+    if (!colorInput){
+        e.target.style.backgroundColor = `rgba(${red},${green},${blue})`
+    }else{
+         e.target.style.backgroundColor = `${randomElement(activeColorArray)}`
+        }
 }
 
 function fillGrid(row){
