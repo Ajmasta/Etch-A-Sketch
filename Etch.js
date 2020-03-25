@@ -73,11 +73,17 @@ function colorHandler(e){
     let green = Math.floor(Math.random()*256)
     let blue= Math.floor(Math.random()*256)
     if(!e.ctrlKey){
+   
     if (!colorInput){
         e.target.style.backgroundColor = `rgba(${red},${green},${blue})`
-    }else{
+    }
+    else{
          e.target.style.backgroundColor = `${randomElement(activeColorArray)}`
-        }}
+        }
+    }
+    if (e.shiftKey){
+        e.target.style.backgroundColor = "var(--color)"
+    }   
 }
 
 function fillGrid(row){
@@ -106,8 +112,8 @@ reset.addEventListener("click", ()=>{
         div.style.backgroundColor = "var(--color)"
         div.value=0
             }
-
         )
+       //resetting the cases when borders are toggled off 
     document.querySelectorAll(".bigGrid").forEach(div=> {
         div.style.backgroundColor = "var(--color)"
         div.value=0
@@ -143,11 +149,7 @@ colorButton.addEventListener("input", e=>{
             if (colorChoice.length>0)  customPaletteContainer.classList.add("active")
         })
     }
-
-   
-    
-
-    if (document.querySelector(".special")) document.querySelector(".special").innerHTML = ""
+ 
 
     colorInput = true;
     colorChoice.push(e.target.value);
