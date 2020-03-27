@@ -88,22 +88,21 @@ function colorHandler(e){
 
 function fillGrid(row){
     grid.innerHTML=""
-    for(i=1; i<=row;i++){
-        for(y=1; y<=row; y++){
+    for(i=1; i<=row*row;i++){
         let div = document.createElement("div")
         div.value = 0
         div.className = "coloredGrid"
 
         if(row>=150) {
             div.className = "bigGrid"
+        
         }
 
         div.addEventListener("mouseover", colorHandler)
 
         grid.appendChild(div)
         }
-    
-    }
+        
 }
 
 reset.addEventListener("click", ()=>{
